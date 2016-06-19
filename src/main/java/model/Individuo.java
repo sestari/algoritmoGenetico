@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class Individuo<GENE> implements Comparable<Individuo> {
 
-    private Integer aptidao = null;
+    private Integer aptidao = 0;
     private Integer geracao;
     private List<GENE> cromossomo;
 
@@ -48,15 +48,17 @@ public abstract class Individuo<GENE> implements Comparable<Individuo> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Individuo<?> individuo = (Individuo<?>) o;
+        Individuo<GENE> individuo = (Individuo<GENE>) o;
 
         if (!geracao.equals(individuo.geracao)) return false;
         return cromossomo.equals(individuo.cromossomo);
+
     }
 
     @Override
     public int hashCode() {
         int result = geracao.hashCode();
+        result = 31 * result + aptidao.hashCode();
         result = 31 * result + cromossomo.hashCode();
         return result;
     }
