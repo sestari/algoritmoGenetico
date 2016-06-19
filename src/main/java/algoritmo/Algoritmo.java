@@ -1,4 +1,4 @@
-package ia;
+package algoritmo;
 
 import model.*;
 

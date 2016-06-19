@@ -1,5 +1,6 @@
-package ia;
+package main;
 
+import algoritmo.Algoritmo;
 import model.DisciplinaEnum;
 import model.HorariosEnum;
 import model.Professor;
